@@ -10,5 +10,5 @@ tags:
 description: 搭建astroPaper博客的详细步骤
 ---
 
-1. ## 安装Node.js
+## 1.安装Node.js
 
