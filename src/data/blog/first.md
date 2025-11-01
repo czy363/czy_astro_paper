@@ -6,8 +6,7 @@ title: 搭建astroPaper博客的详细步骤
 featured: false
 draft: false
 tags:
-  - docs
-  - FAQ
+  - 博客搭建
 description: 搭建astroPaper博客的详细步骤
 ---
 
