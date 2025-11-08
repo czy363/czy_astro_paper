@@ -7,7 +7,7 @@ featured: false
 draft: false
 tags:
   - 博客搭建
-description: 搭建astroPaper博客的详细步骤
+description: 我的博客搭建经验
 ---
 
 **1.安装Node.js**
