@@ -19,10 +19,10 @@ const { tag, tagName, size = "sm" } = Astro.props;
   <a
     href={`/tags/${tag}/`}
     transition:name={tag}
-    class:list={[
-      "relative pe-2 text-lg underline decoration-dashed group-hover:-top-0.5 group-hover:text-accent focus-visible:p-1 focus-visible:no-underline",
-      { "text-sm": size === "sm" },
-    ]}
+class:list={[
+  "relative pe-2 text-lg group-hover:-top-0.5 group-hover:text-accent focus-visible:p-1 focus-visible:no-underline",
+  { "text-sm": size === "sm" },
+]}
   >
 
     <!-- <IconHash
