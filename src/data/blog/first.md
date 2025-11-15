@@ -1,7 +1,7 @@
 ---
 author: 轩邈
-pubDatetime: 2024-01-03T20:40:08Z
-modDatetime: 2024-01-08T18:59:05Z
+pubDatetime: 2025-11-15T19:57:19+08:00
+modDatetime: 2025-11-15T19:57:19+08:00
 title: 搭建astroPaper博客的详细步骤
 featured: false
 draft: false
