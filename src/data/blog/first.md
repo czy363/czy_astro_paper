@@ -111,7 +111,3 @@ git config --global --unset https.proxy
 ```bash
 git push
 ```
-
-
-
-### 
