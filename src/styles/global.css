@@ -52,6 +52,16 @@ html[data-theme="dark"] {
   footer {
     @apply mx-auto max-w-app px-4;
   }
+
+  /* 移除标题的斜体样式 - 增加特异性 */
+  h1, h2, h3, h4, h5, h6 {
+    font-style: normal !important;
+  }
+
+  /* 确保标题链接也不会是斜体 */
+  h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
+    font-style: normal !important;
+  }
 }
 
 @utility max-w-app {
