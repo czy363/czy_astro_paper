@@ -62,6 +62,29 @@ html[data-theme="dark"] {
   h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
     font-style: normal !important;
   }
+
+ /* 设置文章中的链接为蓝色微软雅黑 */
+  article a {
+    color: #006cac !important;
+    font-family: "Microsoft YaHei", "微软雅黑", sans-serif !important;
+    text-decoration: none !important;
+    outline: none !important;
+    box-shadow: none !important;
+    border: none !important;
+    background: none !important;
+  }
+
+  /* 保持文章中链接悬停时的蓝色微软雅黑 */
+  article a:hover {
+    color: #006cac !important;
+    font-family: "Microsoft YaHei", "微软雅黑", sans-serif !important;
+    text-decoration: none !important;
+    outline: none !important;
+    box-shadow: none !important;
+    border: none !important;
+    background: none !important;
+  }
+
 }
 
 @utility max-w-app {
