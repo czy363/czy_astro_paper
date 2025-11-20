@@ -72,3 +72,27 @@ html[data-theme="dark"] {
 h2 a:hover, h3 a:hover, h4 a:hover, h5 a:hover, h6 a:hover {
   text-decoration: none !important;
 }
+
+/* 在 src/styles/global.css 中添加 */
+body {
+  font-family: "Times New Roman", "楷体", KaiTi, serif;
+}
+
+/* 在 src/styles/global.css 中添加 */
+body {
+  font-family: "Times New Roman", "楷体", KaiTi, serif;
+}
+
+/* 确保文章内容区域也应用这些字体 */
+article {
+  font-family: "Times New Roman", "楷体", KaiTi, serif;
+}
+
+/* 对英文和中文分别设置字体 */
+:lang(en) {
+  font-family: "Times New Roman", serif;
+}
+
+:lang(zh) {
+  font-family: "楷体", KaiTi, serif;
+}
