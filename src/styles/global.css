@@ -101,6 +101,18 @@ article code a {
   text-decoration: none !important;
 }
 
+/* 禁用标题链接的悬停效果 */
+h1 a:hover, h2 a:hover, h3 a:hover, h4 a:hover, h5 a:hover, h6 a:hover {
+  text-decoration: none !important;
+  content: none !important;
+}
+
+/* 移除标题的锚点标记 */
+h1::before, h2::before, h3::before, h4::before, h5::before, h6::before {
+  content: none !important;
+}
+
+
 }
 
 @utility max-w-app {
@@ -144,4 +156,20 @@ article {
 
 :lang(zh) {
   font-family: "Microsoft YaHei", "微软雅黑", sans-serif !important;
+}
+
+/* 彻底隐藏文章标题中的锚点 */
+article h1:hover::before,
+article h2:hover::before,
+article h3:hover::before,
+article h4:hover::before,
+article h5:hover::before,
+article h6:hover::before {
+  content: none !important;
+  display: none !important;
+}
+
+/* 隐藏标题锚点链接 */
+a[href^="#"] {
+  display: none !important;
 }
