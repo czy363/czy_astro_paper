@@ -97,7 +97,7 @@ article code {
 /* 黑夜主题下的代码背景色 */
 html[data-theme="dark"] article pre,
 html[data-theme="dark"] article code {
-  background-color: #546079 !important; /* 深色背景 */
+  background-color: #384256 !important; /* 深色背景 */
   color: #f0f0f0 !important; /* 浅色文字 */
 }
 
