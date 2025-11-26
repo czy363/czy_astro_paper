@@ -36,7 +36,7 @@ description: 我的博客搭建经验，既是自己的笔记，也可供路人�
 
 （2）安装pnpm
 
-```
+```bash
 # 1. 指定 npm 全局目录到用户家目录
 npm config set prefix '~/.npm-global'
 
@@ -63,7 +63,7 @@ pnpm install
 
 这个错误：
 
-```
+```bash
 fatal: 无法访问 'https://github.com/czy363/czy_astro_paper.git/ '：gnutls_handshake() failed: The TLS connection was non-properly terminated.
 ```
 
