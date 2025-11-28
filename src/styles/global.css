@@ -88,7 +88,7 @@ html[data-theme="dark"] {
 /* 设置文章中的代码段背景色和字体 */
 article pre,
 article code {
-  background-color: #f7f2df !important;
+  background-color: #ebeacc !important;
   padding: 0.2em 0.4em !important;
   border-radius: 3px !important;
   font-family: "Times New Roman", serif !important;
