@@ -108,15 +108,3 @@ docker pull ghcr.io/hoshinosuzumi/chronoframe:latest
 | https://cr.console.aliyun.com/cn-shanghai/instances/mirrors  |
 | https://docs.world-creator.com/zh/can-kao/terrain/shape-layers/maptiler |
 | https://cloud.maptiler.com/account/credentials/              |
-
-
-
-
-
-
-
-
-
-
-
-[Service credentials | MapTiler Cloud](https://cloud.maptiler.com/account/credentials/)
