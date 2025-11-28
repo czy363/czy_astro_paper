@@ -102,14 +102,21 @@ docker pull ghcr.io/hoshinosuzumi/chronoframe:latest
 
 ###### 🔗 参考链接：
 
-https://swasnext.console.aliyun.com/servers/cn-shanghai
+| https://swasnext.console.aliyun.com/servers/cn-shanghai      |
+| ------------------------------------------------------------ |
+| https://mp.weixin.qq.com/s/C2udgzu3ixkzHYMpkxqbDA            |
+| https://cr.console.aliyun.com/cn-shanghai/instances/mirrors  |
+| https://docs.world-creator.com/zh/can-kao/terrain/shape-layers/maptiler |
+| https://cloud.maptiler.com/account/credentials/              |
 
-https://mp.weixin.qq.com/s/C2udgzu3ixkzHYMpkxqbDA
 
-https://help.aliyun.com/zh/ecs/user-guide/manually-build-an-ftp-site-on-a-linux-instance?spm=a2c4g.11186623.0.i94
 
-https://cr.console.aliyun.com/cn-shanghai/instances/mirrors
 
-https://docs.world-creator.com/zh/can-kao/terrain/shape-layers/maptiler
+
+
+
+
+
+
 
 [Service credentials | MapTiler Cloud](https://cloud.maptiler.com/account/credentials/)
