@@ -5,9 +5,9 @@
 
 :root,
 html[data-theme="light"] {
-  --background: #eaf4fa;
+  --background: #ffffff;
   --foreground: #012c56;
-  --accent: #e14a39;
+  --accent: #085c22d4;
   --muted: #efd8b0;
   --border: #dc9891;
 }
@@ -15,9 +15,9 @@ html[data-theme="light"] {
 html[data-theme="dark"] {
   --background: #212737;
   --foreground: #eaedf3;
-  --accent: #ff6b01;
-  --muted: #8a3302;
-  --border: #ab4b08;
+  --accent: #01a134d4;
+  --muted: #efd8b0;
+  --border: #dc9891;
 }
 
 @theme inline {
@@ -88,7 +88,7 @@ html[data-theme="dark"] {
 /* 设置文章中的代码段背景色和字体 */
 article pre,
 article code {
-  background-color: #ebeacc !important;
+  background-color: #ffffff !important;
   padding: 0.2em 0.4em !important;
   border-radius: 3px !important;
   font-family: "Times New Roman", serif !important;
