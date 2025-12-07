@@ -107,8 +107,5 @@ docker pull ghcr.io/hoshinosuzumi/chronoframe:latest
 
 📚 参考链接：
 
-1. [微信公众号文章 - 相关教程](https://mp.weixin.qq.com/s/C2udgzu3ixkzHYMpkxqbDA)
-2. [ChronoFrame画廊部署教程](https://cr.console.aliyun.com/cn-shanghai/instances/mirrors)
-3. [World Creator 中文文档](https://docs.world-creator.com/zh/can-kao/terrain/shape-layers/maptiler)
-4. [MapTiler Cloud 凭证管理](https://cloud.maptiler.com/account/credentials/)
+1. [ChronoFrame画廊部署教程](https://mp.weixin.qq.com/s/C2udgzu3ixkzHYMpkxqbDA)
 
