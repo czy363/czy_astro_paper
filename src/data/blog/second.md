@@ -1,23 +1,24 @@
 ---
 author: 轩邈
-pubDatetime: 2025-11-15T19:57:19+08:00
-modDatetime: 2025-11-15T19:57:19+08:00
+pubDatetime: 2025-12-06T19:57:19+08:00
+modDatetime: 2025-12-07T19:57:19+08:00
 title: 搭建chronoframes画廊详细教程
 featured: false
 draft: false
 tags:
   - 博客搭建
-description: 搭建chronoframes画廊教程
+description: 在线管理照片，多存储后端、LivePhoto、地球仪视图
 ---
 
 ### 1. 安装docker
 
-#### （1）远程登录服务器，查看阿里云服务器系统
+#### （1）远程登录服务器，查看阿里云服务器系统为ubuntu
 
 ```bash
-admin@iZuf6fl1lkbj829ezx5i7qZ:~$ cat /etc/os-release | grep -E '^ID='
-ID=ubuntu
+cat /etc/os-release | grep -E '^ID='
 ```
+
+![image-20251207212131038](assets/image-20251207212131038.png) 
 
 #### （2）添加Docker软件包源 + 安装Docker社区版本
 
@@ -37,6 +38,7 @@ sudo apt-get -y install docker-ce docker-ce-cli containerd.io docker-buildx-plug
 ```bash
 #启动Docker
 sudo systemctl start docker
+
 #设置Docker守护进程在系统启动时自动启动
 sudo systemctl enable docker
 ```
@@ -59,37 +61,23 @@ sudo systemctl restart docker
 ###### 查看版本
 
 ```bash
-admin@iZuf6fl1lkbj829ezx5i7qZ:~$ docker --version
-Docker version 28.1.1, build 4eba377
+docker --version
 ```
+
+![image-20251207212345372](assets/image-20251207212345372.png) 
 
 ###### 检查 Docker 服务状态
 
 ```bash
-admin@iZuf6fl1lkbj829ezx5i7qZ:~$ sudo systemctl status docker.service
-● docker.service - Docker Application Container Engine
-     Loaded: loaded (/lib/systemd/system/docker.service; enabled; vendor preset: enabled)
-     Active: active (running) since Fri 2025-11-28 21:32:16 CST; 21min ago
-TriggeredBy: ● docker.socket
-       Docs: https://docs.docker.com
-   Main PID: 1995867 (dockerd)
-      Tasks: 11
-     Memory: 25.7M
-     CGroup: /system.slice/docker.service
-             └─1995867 /usr/bin/dockerd -H fd:// --containerd=/run/containerd/containerd.sock
+sudo systemctl status docker.service
 ```
 
-
+![image-20251207212442516](assets/image-20251207212442516.png) 
 
 ### 2.安装docker-compose
 
 ```bash
-admin@iZuf6fl1lkbj829ezx5i7qZ:~$ sudo apt-get -y install docker-compose-plugin
-Reading package lists... Done
-Building dependency tree       
-Reading state information... Done
-docker-compose-plugin is already the newest version (2.35.1-1~ubuntu.20.04~focal).
-0 upgraded, 0 newly installed, 0 to remove and 165 not upgraded.
+sudo apt-get -y install docker-compose-plugin
 ```
 
 
@@ -103,9 +91,106 @@ docker pull ghcr.io/hoshinosuzumi/chronoframe:latest
 
 
 
+### 4. 通过宝塔面板创建chronoframes目录，并且在其中创建data目录，docker-compose.yml和.env文件
+
+![image-20251207212813745](assets/image-20251207212813745.png)
+
+![image-20251207213318264](assets/image-20251207213318264.png) 
+
+
+
+**docker-compose.yml** 如下
+
+```yaml
+services:
+  chronoframe:
+    image: ghcr.io/hoshinosuzumi/chronoframe:latest
+    container_name: chronoframe
+    restart: unless-stopped
+    ports:
+      - '3000:3000'
+    volumes:
+      - ./data/storage:/app/data/storage
+    env_file:
+      - .env
+```
+
+**.env** 如下
+
+```bash
+# 邮箱密码 Admin email (必填)
+CFRAME_ADMIN_EMAIL=chuzhuyuan@outlook.com
+
+# Admin username (optional, default Chronoframe)
+CFRAME_ADMIN_NAME=xuanmiao
+# Admin password (optional, default CF1234@!)
+CFRAME_ADMIN_PASSWORD=你设置的密码
+
+# 存储路径 Storage provider（必填）(local, s3 or openlist )
+NUXT_STORAGE_PROVIDER=local
+NUXT_PROVIDER_LOCAL_PATH=/app/data/storage
+
+# 会话密码 Session password （必填）(32‑char random string)
+NUXT_SESSION_PASSWORD=XZgc7VYm0oZx9XlK4NMnjcc5xukMtmfXE5cke0cZwCA=
+
+# 元数据 Site metadata (all optional)
+NUXT_PUBLIC_APP_TITLE=chronoframe
+NUXT_PUBLIC_APP_SLOGAN=remember life by photos
+NUXT_PUBLIC_APP_AUTHOR=xuanmiao
+NUXT_PUBLIC_APP_AVATAR_URL=https://czywordpress.oss-cn-shanghai.aliyuncs.com/%E5%BE%AE%E8%BD%AF%E5%A3%81%E7%BA%B8/2025-11-27_577473_17640302872101686.jpg
+
+# 登录 （如果通过地址+端口访问，NUXT_ALLOW_INSECURE_COOKIE=true 必填）
+NUXT_ALLOW_INSECURE_COOKIE=true
+```
+
+
+
+### 5. 创建并启动容器
+
+```bash
+docker run -d --name chronoframe -p 3000:3000 -v $(pwd)/data:/app/data --env-file .env ghcr.io/hoshinosuzumi/chronoframe:latest
+```
+
+```bash
+如果需要修改配置，再重启容器，按照如下操作：
+
+1. 先 docker ps 查看容器id;
+2. docker stop container_id  停止容器运行
+3. 修改配置文件
+4. docker start container_id  重新启动容器
+
+或者
+1. docker stop container_id 停止容器运行
+2. docker rm container_id 删除容器
+3. docker run -d --name chronoframe -p 3000:3000 -v $(pwd)/data:/app/data --env-file .env  ghcr.io/hoshinosuzumi/chronoframe:latest  重新创建并启动容器
+```
+
+
+
+### 6. 阿里云服务器防火墙添加规则开放3000端口
+
+![image-20251207221049291](assets/image-20251207221049291.png)
+
+ 
+
+### 7. 访问 服务器地址+3000端口， http://106.15.227.210:3000/，点击左侧头像，进行登录
+
+![thumbnail_image](assets/thumbnail_image.png) 
+
+### 8. 登录成功后，头像下方点击蓝色控制台按钮，就可以进入控制台仪表盘，在照片库上传照片
+
+![image-20251207222049694](assets/image-20251207222049694.png)
+
+
+
+### 9. 最后显示效果如下
+
+![image-20251207222230643](assets/image-20251207222230643.png) 
+
 <div style="text-align: center; font-size: 24px; color: green; font-family: 'Microsoft YaHei', sans-serif;">END~</div>
 
 📚 参考链接：
 
+1. [ChronoFrame主页](https://chronoframe.bh8.ga/zh/)
 1. [ChronoFrame画廊部署教程](https://mp.weixin.qq.com/s/C2udgzu3ixkzHYMpkxqbDA)
-
+1. [ChronoFrame社区](https://github.com/HoshinoSuzumi/chronoframe/discussions)
