@@ -1,7 +1,7 @@
 ---
 author: 轩邈
 pubDatetime: 2025-12-06T19:57:19+08:00
-modDatetime: 2025-12-07T19:57:19+08:00
+modDatetime: 2025-12-08T19:57:19+08:00
 title: 搭建chronoframes画廊详细教程
 featured: false
 draft: false
