@@ -193,4 +193,6 @@ docker run -d --name chronoframe -p 3000:3000 -v $(pwd)/data:/app/data --env-fil
 
 1. [ChronoFrame主页](https://chronoframe.bh8.ga/zh/)
 1. [ChronoFrame画廊部署教程](https://mp.weixin.qq.com/s/C2udgzu3ixkzHYMpkxqbDA)
+1. [Live Photo + 全球地图 + 丝滑到飞起的自托管相册](https://yinji.org/chronoframe.html/comment-page-2#comment-13971)
 1. [ChronoFrame社区](https://github.com/HoshinoSuzumi/chronoframe/discussions)
+
