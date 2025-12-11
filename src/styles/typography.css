@@ -101,6 +101,31 @@
       inset 1px 0 0 rgba(255, 255, 255, 0.8),
       0 2px 8px rgba(0, 0, 0, 0.15),
       0 1px 3px rgba(0, 0, 0, 0.2);
+
+    /* Thin scrollbar for code blocks */
+    scrollbar-width: thin;
+    scrollbar-color: #cccccc transparent; /* Light gray scrollbar color */
+
+    /* Webkit scrollbar styling (Chrome/Safari) */
+    &::-webkit-scrollbar {
+      height: 5px; /* Horizontal scrollbar height - made thinner */
+      width: 8px; /* Vertical scrollbar width */
+    }
+
+    &::-webkit-scrollbar-track {
+      background: transparent; /* Scrollbar track color */
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: #cccccc; /* Light gray scrollbar thumb color */
+      border-radius: 3px; /* Rounded scrollbar thumb */
+      border: 1px solid transparent; /* Padding around thumb - adjusted for thinner scrollbar */
+      background-clip: content-box; /* Keeps padding transparent */
+    }
+
+    &::-webkit-scrollbar-thumb:hover {
+      background-color: var(--accent); /* Thumb hover color */
+    }
   }
 
   html[data-theme="dark"] .astro-code {
@@ -111,6 +136,13 @@
       inset 1px 0 0 rgba(255, 255, 255, 0.1),
       0 2px 10px rgba(0, 0, 0, 0.5),
       0 1px 4px rgba(0, 0, 0, 0.6);
+
+    /* Light gray scrollbar for dark theme */
+    scrollbar-color: #999999 transparent;
+
+    &::-webkit-scrollbar-thumb {
+      background-color: #999999;
+    }
   }
 
   /* Styles for Shiki transformers */
