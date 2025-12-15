@@ -16,9 +16,7 @@ description: 在线管理照片，多存储后端、LivePhoto、地球仪视图
 
 ```bash
 cat /etc/os-release | grep -E '^ID='
-```
-
-![image-20251207212131038](assets/image-20251207212131038.png) 
+``` 
 
 #### （2）添加Docker软件包源 + 安装Docker社区版本
 
@@ -64,9 +62,8 @@ sudo systemctl restart docker
 docker --version
 ```
 
-![image-20251207212345372](assets/image-20251207212345372.png) 
 
-###### 检查 Docker 服务状态
+###### 检查 Docker 服务状态 
 
 ```bash
 sudo systemctl status docker.service

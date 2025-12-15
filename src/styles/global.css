@@ -5,7 +5,7 @@
 
 :root,
 html[data-theme="light"] {
-  --background: #ffffff;
+  --background: #ebdfd2;
   --foreground: #012c56;
   --accent: #085c22d4;
   --muted: #efd8b0;
@@ -34,36 +34,51 @@ html[data-theme="dark"] {
     scrollbar-width: auto;
     scrollbar-color: var(--color-muted) transparent;
   }
+
   html {
     @apply overflow-y-scroll scroll-smooth;
   }
+
   body {
     @apply flex min-h-svh flex-col bg-background font-mono text-foreground selection:bg-accent/75 selection:text-background;
   }
+
   a,
   button {
     @apply outline-offset-1 outline-accent focus-visible:no-underline focus-visible:outline-2 focus-visible:outline-dashed;
   }
+
   button:not(:disabled),
   [role="button"]:not(:disabled) {
     cursor: pointer;
   }
+
   section,
   footer {
     @apply mx-auto max-w-app px-4;
   }
 
   /* 移除标题的斜体样式 - 增加特异性 */
-  h1, h2, h3, h4, h5, h6 {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     font-style: normal !important;
   }
 
   /* 确保标题链接也不会是斜体 */
-  h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
+  h1 a,
+  h2 a,
+  h3 a,
+  h4 a,
+  h5 a,
+  h6 a {
     font-style: normal !important;
   }
 
- /* 设置文章中的链接为蓝色微软雅黑 */
+  /* 设置文章中的链接为蓝色微软雅黑 */
   article a {
     color: #006cac !important;
     font-family: "Microsoft YaHei", "微软雅黑", sans-serif !important;
@@ -85,51 +100,65 @@ html[data-theme="dark"] {
     background: none !important;
   }
 
-/* 设置文章中的代码段背景色和字体 */
-article pre,
-article code {
-  background-color: #ffffff !important;
-  padding: 0.2em 0.4em !important;
-  border-radius: 3px !important;
-  font-family: "Times New Roman", serif !important;
-}
+  /* 设置文章中的代码段背景色和字体 */
+  article pre,
+  article code {
+    background-color: #ffffff !important;
+    padding: 0.2em 0.4em !important;
+    border-radius: 3px !important;
+    font-family: "Times New Roman", serif !important;
+  }
 
-/* 黑夜主题下的代码背景色 */
-html[data-theme="dark"] article pre,
-html[data-theme="dark"] article code {
-  background-color: #384256 !important; /* 深色背景 */
-  color: #f0f0f0 !important; /* 浅色文字 */
-}
+  /* 黑夜主题下的代码背景色 */
+  html[data-theme="dark"] article pre,
+  html[data-theme="dark"] article code {
+    background-color: #384256 !important;
+    /* 深色背景 */
+    color: #f0f0f0 !important;
+    /* 浅色文字 */
+  }
 
-/* 确保代码块内的链接保持蓝色 */
-article pre a,
-article code a {
-  color: #006cac !important;
-  text-decoration: none !important;
-}
+  /* 确保代码块内的链接保持蓝色 */
+  article pre a,
+  article code a {
+    color: #006cac !important;
+    text-decoration: none !important;
+  }
 
-/* 黑夜主题下代码块内的链接颜色 */
-html[data-theme="dark"] article pre a,
-html[data-theme="dark"] article code a {
-  color: #4fc3f7 !important; /* 明亮的蓝色，在深色背景下更清晰 */
-}
+  /* 黑夜主题下代码块内的链接颜色 */
+  html[data-theme="dark"] article pre a,
+  html[data-theme="dark"] article code a {
+    color: #4fc3f7 !important;
+    /* 明亮的蓝色，在深色背景下更清晰 */
+  }
 
-/* 禁用标题链接的悬停效果 */
-h1 a:hover, h2 a:hover, h3 a:hover, h4 a:hover, h5 a:hover, h6 a:hover {
-  text-decoration: none !important;
-  content: none !important;
-}
+  /* 禁用标题链接的悬停效果 */
+  h1 a:hover,
+  h2 a:hover,
+  h3 a:hover,
+  h4 a:hover,
+  h5 a:hover,
+  h6 a:hover {
+    text-decoration: none !important;
+    content: none !important;
+  }
 
-/* 移除标题的锚点标记 */
-h1::before, h2::before, h3::before, h4::before, h5::before, h6::before {
-  content: none !important;
-}
+  /* 移除标题的锚点标记 */
+  h1::before,
+  h2::before,
+  h3::before,
+  h4::before,
+  h5::before,
+  h6::before {
+    content: none !important;
+  }
 
 
 }
 
 @utility max-w-app {
-  @apply max-w-3xl;
+  @apply max-w-5xl;
+  /* Increased from max-w-3xl (48rem) to max-w-6xl (72rem) - 1.5x increase */
 }
 
 .active-nav {
@@ -143,7 +172,11 @@ h1::before, h2::before, h3::before, h4::before, h5::before, h6::before {
 }
 
 /* 禁用标题链接的悬停效果 */
-h2 a:hover, h3 a:hover, h4 a:hover, h5 a:hover, h6 a:hover {
+h2 a:hover,
+h3 a:hover,
+h4 a:hover,
+h5 a:hover,
+h6 a:hover {
   text-decoration: none !important;
 }
 
