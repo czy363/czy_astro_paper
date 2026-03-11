@@ -44,7 +44,14 @@
     }
 
     img {
-      @apply mx-auto border border-border;
+      @apply mx-auto rounded-lg max-w-full h-auto;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1), 0 4px 8px rgba(0, 0, 0, 0.08);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    img:hover {
+      box-shadow: 0 16px 24px rgba(0, 0, 0, 0.15), 0 8px 16px rgba(0, 0, 0, 0.12);
+      transform: translateY(-4px);
     }
 
     figcaption {
@@ -94,6 +101,7 @@
   /* ===== Code Blocks & Syntax Highlighting ===== */
   .astro-code {
     @apply flex bg-(--shiki-light-bg) text-(--shiki-light) outline-border [&_span]:text-(--shiki-light);
+    font-size: 0.7em; /* 减小为原来的一半 */
     border: 1px solid;
     border-color: rgba(255, 255, 255, 0.6) rgba(0, 0, 0, 0.35) rgba(0, 0, 0, 0.45) rgba(255, 255, 255, 0.3);
     box-shadow:
